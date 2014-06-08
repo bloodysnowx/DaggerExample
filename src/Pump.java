@@ -1,0 +1,3 @@
+interface Pump {
+  void pump();
+}

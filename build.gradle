@@ -1,0 +1,21 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+jar {
+    // from("$projectDir") { include 'libs/*.jar' }
+    manifest.mainAttributes("Main-Class" : "CoffeeApp")
+}
+
+repositories {
+    mavenCentral()
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+}
+
+dependencies {
+    // compile fileTree(dir: 'libs', include: ['*.jar'])
+    // runtime fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.squareup.dagger:dagger:1.+'
+    compile 'com.squareup.dagger:dagger-compiler:1.+'
+}
+
+mainClassName = 'CoffeeApp'
